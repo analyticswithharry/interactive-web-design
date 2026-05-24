@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #000;
+      min-height: 100vh;
+      overflow: hidden;
+      font-family: 'Poppins', Arial, sans-serif;
+    }
+
+    .container-grid {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 100vw;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, 30px);
+      grid-auto-rows: 30px;
+      gap: 1px;
+      animation: animate 4s linear infinite;
+      z-index: 1;
+    }
+
+    @keyframes animate {
+      0% { filter: hue-rotate(0deg); }
+      100% { filter: hue-rotate(360deg); }
+    }
+
+    .box {
+      width: 30px;
+      height: 30px;
+      background: #111;
+      transition: 2s;
+    }
+
+    .box:hover {
+      transition: 0s;
+      background: #0f0;
+      cursor: alias;
+    }
+
+    .login-form {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 350px;
+      background: #0a0a0a;
+      padding: 30px;
+      border-radius: 10px;
+      z-index: 10;
+      box-shadow: 0 0 0 4px rgb(43 43 43);
+    }
+
+    .heading {
+      color: #fff000;
+      text-align: center;
+      margin-bottom: 24px;
+      font-weight: 600;
+    }
+
+    .form-label {
+      display: inline-block;
+      color: rgb(255 179 0 / 60%);
+      margin-bottom: 6px;
+      font-size: 14px;
+    }
+
+    .form-control {
+      display: block;
+      width: 100%;
+      padding: 12px 15px;
+      font-size: 1rem;
+      color: rgb(255 179 0 / 80%);
+      background-color: #000000;
+      border: 1px solid #ffffff14;
+      border-radius: 6px;
+      transition: all 0.3s ease;
+    }
+
+    .form-control:focus {
+      color: #f9af00;
+      background-color: #1a1a1a;
+      border-color: #ffb300;
+      box-shadow: 0 0 8px rgba(255, 179, 0, 0.3);
+      outline: none;
+    }
+
+    .form-check-input {
+      accent-color: #ffb300;
+    }
+
+    .d-flex {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      font-size: 14px;
+    }
+
+    .form-check-label {
+      color: rgb(255 179 0 / 60%);
+      cursor: pointer;
+    }
+
+    a {
+      color: rgb(255 179 0 / 60%);
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: #fff000;
+      text-decoration: underline;
+    }
+
+    .btn-primary {
+      border: none;
+      background: #ffed00;
+      color: black;
+      width: 100%;
+      padding: 12px;
+      font-size: 16px;
+      font-weight: 600;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .btn-primary:hover {
+      background-color: #ebaf00;
+      transform: translateY(-1px);
+    }
+
+    input::placeholder {
+      color: rgb(255 179 0 / 40%);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container-grid" id="container"></div>
+
+  <div class="login-form">
+    <h2 class="heading">Login</h2>
+    <form>
+      <div class="mb-3">
+        <label for="username" class="form-label">Username</label>
+        <input type="text" class="form-control" id="username" placeholder="Enter Username" required>
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" class="form-control" id="password" placeholder="Enter Password" required>
+      </div>
+      <div class="d-flex">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="rememberMe" checked>
+          <label class="form-check-label" for="rememberMe">Remember me</label>
+        </div>
+        <a href="#">Forgot password?</a>
+      </div>
+      <button type="submit" class="btn-primary">Login</button>
+    </form>
+  </div>
+
+  <script>
+    // Generate grid boxes
+    const container = document.getElementById('container');
+    const boxCount = Math.ceil(window.innerWidth / 30) * Math.ceil(window.innerHeight / 30);
+
+    for (let i = 0; i < boxCount; i++) {
+      const box = document.createElement('div');
+      box.className = 'box';
+      container.appendChild(box);
+    }
+
+    // Form submission demo
+    document.querySelector('form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Login Successful');
+    });
+
+    // Responsive grid update on resize
+    window.addEventListener('resize', () => {
+      container.innerHTML = '';
+      const newBoxCount = Math.ceil(window.innerWidth / 30) * Math.ceil(window.innerHeight / 30);
+      for (let i = 0; i < newBoxCount; i++) {
+        const box = document.createElement('div');
+        box.className = 'box';
+        container.appendChild(box);
+      }
+    });
+  </script>
+</body>
+</html>
