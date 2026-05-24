@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Code • Learn to Code</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100dvh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: rgb(21 23 27);
+      font-family: "Poppins", sans-serif;
+    }
+
+    .box {
+      width: 850px;
+      height: 500px;
+      display: flex;
+      flex-direction: row;
+      border-radius: 5px;
+      box-shadow: 12px 10px 10px 2px rgba(12, 12, 12, 0.58);
+      overflow: hidden;
+    }
+
+    .content {
+      width: 60%;
+      height: 100%;
+      padding: 30px 80px;
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      gap: 100px;
+      background: linear-gradient(135deg, rgb(113 85 249), rgb(94 64 240));
+      color: white;
+      border-radius: 5px 0 0 5px;
+    }
+
+    .content span {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      font-weight: 500;
+      cursor: pointer;
+    }
+
+    .info {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+    }
+
+    .info p {
+      font-size: 40px;
+      font-weight: 500;
+      max-width: 90%;
+    }
+
+    .info button {
+      width: 140px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background-color: rgb(21 23 27);
+      color: white;
+      border: 0;
+      border-radius: 30px;
+      cursor: pointer;
+      transition-duration: 0.5s;
+    }
+
+    .info button:hover {
+      background-color: rgb(0, 0, 0);
+    }
+
+    .login {
+      width: 40%;
+      height: 100%;
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      gap: 20px;
+      background-color: rgb(22 24 28);
+      color: white;
+      border-radius: 0 5px 5px 0;
+    }
+
+    .message h3 {
+      font-weight: 500;
+      font-size: 18px;
+    }
+
+    .message p {
+      font-size: 11px;
+      color: rgb(173, 173, 173);
+      line-height: 1.5;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .inputDesign {
+      height: 35px;
+      width: 285px;
+      padding-left: 10px;
+      display: flex;
+      align-items: center;
+      background-color: rgba(12, 12, 12, 0.58);
+      border: solid 2px rgba(12, 12, 12, 0.58);
+      border-radius: 3px;
+    }
+
+    .inputDesign input {
+      flex: 1;
+      background: none;
+      border: none;
+      outline: none;
+      color: white;
+      padding-left: 10px;
+      font-size: 14px;
+    }
+
+    .inputDesign input::placeholder {
+      color: rgb(173, 173, 173);
+    }
+
+    .icons {
+      width: 18px;
+      color: #ffffff;
+    }
+
+    .iAgree {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 5px;
+      font-size: 11px;
+    }
+
+    .iAgree input {
+      cursor: pointer;
+    }
+
+    .btn {
+      width: 285px;
+      height: 40px;
+      color: white;
+      background-color: rgb(94, 64, 240);
+      border: 0;
+      border-radius: 5px;
+      cursor: pointer;
+      transition-duration: 0.5s;
+      font-weight: 500;
+    }
+
+    .btn:hover {
+      background-color: rgb(70, 33, 255);
+    }
+
+    .otherLogins {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .socialIcons {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .socialIcons i {
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .socialIcons i:hover {
+      transform: scale(1.2);
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .box {
+        width: 90%;
+        max-width: 400px;
+        height: auto;
+        flex-direction: column;
+      }
+
+      .content {
+        display: none;
+      }
+
+      .login {
+        width: 100%;
+        border-radius: 5px;
+        padding: 40px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <main class="box">
+    <!-- Left Side -->
+    <div class="content">
+      <span>
+        <i class="fa-solid fa-code fa-2x"></i>
+        <p>Code</p>
+      </span>
+      
+      <div class="info">
+        <p>Learn to code. Interactively. For free.</p>
+        <button>
+          <span><i class="fa-solid fa-play"></i></span>
+          Watch demo
+        </button>
+      </div>
+    </div>
+
+    <!-- Right Side - Login -->
+    <div class="login">
+      <div class="message">
+        <h3>Join over 25 million learners from around the globe</h3>
+        <p>Perspiciatis laudantium aperiam eum. Repellat quaerat quae provident iusto esse natus soluta, est ipsum amet molestiae.</p>
+      </div>
+
+      <form action="#">
+        <span class="inputDesign">
+          <svg class="icons" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+            <path fill="#ffffff" d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48L48 64zM0 176L0 384c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-208L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"/>
+          </svg>
+          <input type="email" placeholder="email@email.com" required>
+        </span>
+
+        <span class="inputDesign">
+          <svg class="icons" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+            <path fill="#ffffff" d="M144 144l0 48 160 0 0-48c0-44.2-35.8-80-80-80s-80 35.8-80 80zM80 192l0-48C80 64.5 144.5 0 224 0s144 64.5 144 144l0 48 16 0c35.3 0 64 28.7 64 64l0 192c0 35.3-28.7 64-64 64L64 512c-35.3 0-64-28.7-64-64L0 256c0-35.3 28.7-64 64-64l16 0z"/>
+          </svg>
+          <input type="password" placeholder="*********" required>
+        </span>
+
+        <div class="iAgree">
+          <input type="checkbox" required>
+          <p>I agree to all statements included in 
+            <span><a href="#">Terms of Use</a></span>
+          </p>
+        </div>
+
+        <input class="btn" type="submit" value="Login">
+      </form>
+
+      <div class="otherLogins">
+        <p>Or continue with these social profile</p>
+        <div class="socialIcons">
+          <i class="fab fa-google fa-2x"></i>
+          <i class="fab fa-facebook fa-2x"></i>
+          <i class="fab fa-twitter fa-2x"></i>
+          <i class="fab fa-instagram fa-2x"></i>
+        </div>
+        <p style="color:rgb(74, 98, 255); cursor: pointer;">
+          <a href="#">Create an Account</a>
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    // Optional demo functionality
+    document.querySelector('form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Login Successful! (Demo)');
+    });
+  </script>
+</body>
+</html>
